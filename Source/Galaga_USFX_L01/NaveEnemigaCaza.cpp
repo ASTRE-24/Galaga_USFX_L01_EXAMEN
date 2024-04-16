@@ -55,7 +55,7 @@ void ANaveEnemigaCaza::Disparar()
 			{
 				//World->SpawnActor<AGalaga_USFX_L01Projectile>(SpawnLocation, FireRotation);
 				FRotator ModifiedRotation = FireRotation;
-				// Modify rotation for each projectile
+				// Modificando la rotacion para que los disparos sean en forma de abanico
 				ModifiedRotation.Yaw += (i - 1) * 20.0f; // Offset rotation by 10 degrees
 
 				const FVector ModifiedSpawnLocation = GetActorLocation() + ModifiedRotation.RotateVector(GunOffset);
