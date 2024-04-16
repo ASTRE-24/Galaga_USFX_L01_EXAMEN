@@ -9,15 +9,15 @@
 ANaveEnemigaCaza::ANaveEnemigaCaza()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
-	//// Create the mesh component
+	//// Create the mesh component, peach en x
 	//mallaNaveEnemiga = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 
     
     bCanFire = true;
     FireRate = 1.0f; // Ajusta según sea necesario
-    GunOffset = FVector(100.0f, 0.0f, 0.0f); // Ajusta según sea necesario
-    static ConstructorHelpers::FObjectFinder<USoundBase> FireAudio(TEXT("/Game/TwinStick/Audio/TwinStickFire.TwinStickFire"));
+    GunOffset = FVector(100.0f, 0.0f, 0.0f); // Ajusta según sea necesario distancia de la nave
+    static ConstructorHelpers::FObjectFinder<USoundBase> FireAudio(TEXT("SoundWave'/Game/StarterContent/Audio/GunShotSnglShotEx_PE1097508.GunShotSnglShotEx_PE1097508'"));
     FireSound = FireAudio.Object;
 	
 }

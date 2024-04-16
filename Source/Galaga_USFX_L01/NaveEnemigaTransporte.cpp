@@ -13,7 +13,7 @@ ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 	bCanFire = true;
 	FireRate = 2.0f; // Ajusta según sea necesario
 	GunOffset = FVector(100.0f, 0.0f, 0.0f); // Ajusta según sea necesario
-	static ConstructorHelpers::FObjectFinder<USoundBase> FireAudio(TEXT("/Game/TwinStick/Audio/TwinStickFire.TwinStickFire"));
+	static ConstructorHelpers::FObjectFinder<USoundBase> FireAudio(TEXT("SoundWave'/Game/StarterContent/Audio/GunShotSnglShotEx_PE1097508.GunShotSnglShotEx_PE1097508'"));
 	FireSound = FireAudio.Object;
 
 }
@@ -52,6 +52,7 @@ void ANaveEnemigaTransporte::Disparar()
 
 			// Spawnea el primer proyectil
 			World->SpawnActor<AGalaga_USFX_L01Projectile>(SpawnLocationLeft, FireRotation);
+			//World->SpawnActor<AGalaga_USFX_L01Projectile>(SpawnLocation, FireRotation);
 
 			// Calcula la posición de spawn para el segundo proyectil (a la derecha de la nave)
 			const FVector SpawnLocationRight = SpawnLocation + FireRotation.RotateVector(FVector(0.f, 60.f, 0.f));
